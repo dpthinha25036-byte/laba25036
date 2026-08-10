@@ -8,11 +8,19 @@ workflows:
       xcode: latest
 
     scripts:
-      - name: Check Mac
+      - name: Check Mac and keep session alive
         script: |
           echo "===== macOS ====="
           sw_vers
+
           echo "===== Storage ====="
           df -h
+
           echo "===== Hardware ====="
           system_profiler SPHardwareDataType
+
+          echo "===== Remote session ====="
+          echo "Mac is ready for SSH/VNC"
+          echo "Keeping machine alive for 60 minutes..."
+
+          sleep 3600
