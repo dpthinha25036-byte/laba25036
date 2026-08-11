@@ -2,7 +2,7 @@ workflows:
   macos-machine:
     name: macOS Machine
     instance_type: mac_mini_m2
-    max_build_duration: 60
+    max_build_duration: 120
 
     environment:
       xcode: latest
@@ -21,6 +21,6 @@ workflows:
 
           echo "===== Remote session ====="
           echo "Mac is ready for SSH/VNC"
-          echo "Keeping machine alive for 60 minutes..."
+          echo "Keeping machine alive for 120 minutes..."
 
-          sleep 3600
+          sleep 7200
